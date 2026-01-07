@@ -1,5 +1,10 @@
+data "sops_file" "cu5083-key" {
+  # export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
+  source_file = "../../cu5083.enc.json"
+}
+
 provider "google" {
-  credentials = file("../../cu5083-76209ae280b2.json")
+  credentials = data.sops_file.cu5083-key.raw
 
   project = "cu5083"
   region  = "us-central1"  // default
