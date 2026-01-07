@@ -1,7 +1,7 @@
 provider "google" {
-  credentials = file("FILL-IN.json")
+  credentials = file("../../cu5083-76209ae280b2.json")
 
-  project = "FILL-IN"
+  project = "cu5083"
   region  = "us-central1"  // default
   zone    = "us-central1-c"  // default
 }
